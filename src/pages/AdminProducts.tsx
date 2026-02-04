@@ -63,23 +63,23 @@ const AdminProducts = () => {
 
   return (
     <AdminLayout>
-      <div className="p-8">
+      <div className="p-4 md:p-8">
         {/* Header */}
-        <div className="flex items-start justify-between mb-8">
+        <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 mb-6 md:mb-8">
           <div>
-            <h1 className="font-bebas text-4xl text-foreground tracking-wide">PRODUCTS</h1>
+            <h1 className="font-bebas text-3xl md:text-4xl text-foreground tracking-wide">PRODUCTS</h1>
             <p className="text-muted-foreground font-space text-sm mt-1">
               Manage your product catalog ({products.length} items)
             </p>
           </div>
           <Dialog open={isAddDialogOpen} onOpenChange={setIsAddDialogOpen}>
             <DialogTrigger asChild>
-              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bebas tracking-wider">
+              <Button className="bg-accent hover:bg-accent/90 text-accent-foreground font-bebas tracking-wider w-full sm:w-auto">
                 <Plus className="h-4 w-4 mr-2" />
                 ADD PRODUCT
               </Button>
             </DialogTrigger>
-            <DialogContent className="bg-background border-muted-foreground/20 max-w-2xl max-h-[90vh] overflow-y-auto">
+            <DialogContent className="bg-background border-muted-foreground/20 max-w-2xl max-h-[90vh] overflow-y-auto mx-4">
               <DialogHeader>
                 <DialogTitle className="font-bebas text-2xl tracking-wide">ADD NEW PRODUCT</DialogTitle>
               </DialogHeader>
@@ -89,8 +89,8 @@ const AdminProducts = () => {
         </div>
 
         {/* Filters */}
-        <div className="flex gap-4 mb-6">
-          <div className="relative flex-1 max-w-md">
+        <div className="flex flex-col sm:flex-row gap-3 md:gap-4 mb-6">
+          <div className="relative flex-1">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
             <Input
               placeholder="Search products..."
@@ -100,7 +100,7 @@ const AdminProducts = () => {
             />
           </div>
           <Select value={selectedCategory} onValueChange={setSelectedCategory}>
-            <SelectTrigger className="w-48 bg-muted/30 border-muted-foreground/20 font-space">
+            <SelectTrigger className="w-full sm:w-48 bg-muted/30 border-muted-foreground/20 font-space">
               <SelectValue placeholder="Category" />
             </SelectTrigger>
             <SelectContent>
@@ -113,8 +113,8 @@ const AdminProducts = () => {
         </div>
 
         {/* Products Table */}
-        <div className="bg-muted/30 border border-muted-foreground/10">
-          <Table>
+        <div className="bg-muted/30 border border-muted-foreground/10 overflow-x-auto">
+          <Table className="min-w-[800px]">
             <TableHeader>
               <TableRow className="border-muted-foreground/10 hover:bg-transparent">
                 <TableHead className="font-bebas text-sm tracking-wider text-muted-foreground">ID</TableHead>
