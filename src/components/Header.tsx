@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { Search, ShoppingCart, Menu, X, Phone, Truck } from 'lucide-react';
+import alamdarLogo from '@/assets/alamdar-logo.png';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
@@ -48,12 +49,17 @@ export const Header = ({ cartCount = 0, onNavigate }: HeaderProps) => {
               className="flex-shrink-0 cursor-pointer" 
               onClick={() => onNavigate?.('home')}
             >
-              <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground">
-                IRON<span className="text-accent">GRIP</span>
-              </h1>
-              <p className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase -mt-1">
-                Industrial Hardware
-              </p>
+              <div className="flex items-center gap-3">
+                <img src={alamdarLogo} alt="Alamdar logo" className="h-10 w-auto" />
+                <div>
+                  <h1 className="font-display text-2xl md:text-3xl font-bold tracking-tight text-foreground">
+                    ALAM<span className="text-accent">DAR</span>
+                  </h1>
+                  <p className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase -mt-1">
+                    Industrial Hardware
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Search - Desktop */}

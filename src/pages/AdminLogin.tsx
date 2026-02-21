@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Lock, User, ArrowRight } from "lucide-react";
+import alamdarLogo from '@/assets/alamdar-logo.png';
 
 const AdminLogin = () => {
   const navigate = useNavigate();
@@ -33,9 +34,12 @@ const AdminLogin = () => {
         
         <div className="relative z-10 flex flex-col justify-between p-12 w-full">
           <div>
-            <h1 className="font-bebas text-5xl text-background tracking-wider">
-              IRON<span className="text-accent">GRIP</span>
-            </h1>
+            <div className="flex items-center gap-4">
+              <img src={alamdarLogo} alt="Alamdar logo" className="h-14 w-auto" />
+              <h1 className="font-bebas text-5xl text-background tracking-wider">
+                ALAM<span className="text-accent">DAR</span>
+              </h1>
+            </div>
             <p className="text-background/60 font-space text-sm mt-2 tracking-wide">
               ADMIN CONTROL CENTER
             </p>
@@ -65,7 +69,7 @@ const AdminLogin = () => {
           </div>
           
           <p className="text-background/40 font-space text-xs">
-            © 2024 IRONGRIP INDUSTRIAL SUPPLY
+            © 2024 ALAMDAR INDUSTRIAL SUPPLY
           </p>
         </div>
       </div>
@@ -75,9 +79,12 @@ const AdminLogin = () => {
         <div className="w-full max-w-md">
           {/* Mobile Logo */}
           <div className="lg:hidden mb-12">
-            <h1 className="font-bebas text-4xl text-foreground tracking-wider">
-              IRON<span className="text-accent">GRIP</span>
-            </h1>
+            <div className="flex items-center gap-3">
+              <img src={alamdarLogo} alt="Alamdar logo" className="h-12 w-auto" />
+              <h1 className="font-bebas text-4xl text-foreground tracking-wider">
+                ALAM<span className="text-accent">DAR</span>
+              </h1>
+            </div>
             <p className="text-muted-foreground font-space text-sm tracking-wide">
               ADMIN PORTAL
             </p>
@@ -104,7 +111,7 @@ const AdminLogin = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="admin@irongrip.com"
+                  placeholder="admin@alamdar.com"
                   className="pl-12 h-12 bg-muted/30 border-muted-foreground/20 focus:border-accent font-space"
                 />
               </div>

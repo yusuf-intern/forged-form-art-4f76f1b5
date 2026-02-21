@@ -5,9 +5,9 @@
 @tailwind utilities;
 
 /* 
-  IRONGRIP - Industrial Hardware E-Commerce
+  ALAMDAR - Industrial Hardware E-Commerce
   Design System: Brutalist Industrial
-  Color Palette: Charcoal, Warm Cream, Copper/Amber Accent
+  Color Palette: Charcoal, Warm Cream, Yellow/Red Accent
   Typography: Bebas Neue (Display) + Space Grotesk (Body)
 */
 
@@ -32,28 +32,31 @@
     --muted: 35 10% 85%;
     --muted-foreground: 30 8% 45%;
 
-    /* Copper/Amber accent */
-    --accent: 25 85% 50%;
-    --accent-foreground: 40 20% 98%;
+    /* Yellow/Red accent */
+    --accent: 50 95% 50%;
+    --accent-foreground: 30 15% 8%;
+
+    --accent-secondary: 0 80% 50%;
+    --accent-secondary-foreground: 0 0% 98%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 35 15% 82%;
     --input: 35 15% 82%;
-    --ring: 25 85% 50%;
+    --ring: 50 95% 50%;
 
     --radius: 0;
 
     /* Sidebar - darker industrial */
     --sidebar-background: 30 10% 12%;
     --sidebar-foreground: 40 15% 90%;
-    --sidebar-primary: 25 85% 50%;
-    --sidebar-primary-foreground: 40 20% 98%;
+    --sidebar-primary: 50 95% 50%;
+    --sidebar-primary-foreground: 30 15% 8%;
     --sidebar-accent: 30 12% 18%;
     --sidebar-accent-foreground: 40 15% 90%;
     --sidebar-border: 30 10% 20%;
-    --sidebar-ring: 25 85% 50%;
+    --sidebar-ring: 50 95% 50%;
 
     /* Custom tokens */
     --glass-bg: 40 20% 96% / 0.8;
@@ -79,24 +82,27 @@
     --muted: 30 10% 22%;
     --muted-foreground: 35 10% 55%;
 
-    --accent: 25 85% 55%;
+    --accent: 50 95% 55%;
     --accent-foreground: 30 15% 8%;
+
+    --accent-secondary: 0 80% 55%;
+    --accent-secondary-foreground: 0 0% 98%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 30 10% 22%;
     --input: 30 10% 22%;
-    --ring: 25 85% 55%;
+    --ring: 50 95% 55%;
 
     --sidebar-background: 30 12% 6%;
     --sidebar-foreground: 40 15% 90%;
-    --sidebar-primary: 25 85% 55%;
+    --sidebar-primary: 50 95% 55%;
     --sidebar-primary-foreground: 30 15% 8%;
     --sidebar-accent: 30 12% 14%;
     --sidebar-accent-foreground: 40 15% 90%;
     --sidebar-border: 30 10% 16%;
-    --sidebar-ring: 25 85% 55%;
+    --sidebar-ring: 50 95% 55%;
 
     --glass-bg: 30 15% 8% / 0.85;
     --glass-border: 30 10% 22% / 0.5;

@@ -25,6 +25,7 @@ import {
   ChevronRight,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import alamdarLogo from '@/assets/alamdar-logo.png';
 
 const mainNavItems = [
   { title: "Dashboard", url: "/admin/dashboard", icon: LayoutDashboard },
@@ -63,12 +64,10 @@ const AdminSidebar = () => {
       {/* Logo Header */}
       <div className="p-4 border-b border-background/10">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 bg-accent flex items-center justify-center flex-shrink-0">
-            <Wrench className="h-5 w-5 text-accent-foreground" />
-          </div>
+          <img src={alamdarLogo} alt="Alamdar logo" className="h-10 w-auto flex-shrink-0" />
           <div className="group-data-[collapsible=icon]:hidden">
             <h1 className="font-bebas text-xl text-background tracking-wider">
-              IRON<span className="text-accent">GRIP</span>
+              ALAM<span className="text-accent">DAR</span>
             </h1>
             <p className="text-background/50 font-space text-[10px] tracking-wider">
               ADMIN PORTAL

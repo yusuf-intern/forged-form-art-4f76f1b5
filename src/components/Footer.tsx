@@ -1,4 +1,5 @@
 import { Mail, Phone, MapPin, ArrowUpRight } from 'lucide-react';
+import alamdarLogo from '@/assets/alamdar-logo.png';
 
 export const Footer = () => {
   return (
@@ -7,9 +8,12 @@ export const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <h2 className="font-display text-2xl font-bold mb-4">
-              IRON<span className="text-accent">GRIP</span>
-            </h2>
+            <div className="flex items-center gap-3 mb-4">
+              <img src={alamdarLogo} alt="Alamdar logo" className="h-10 w-auto" />
+              <h2 className="font-display text-2xl font-bold">
+                ALAM<span className="text-accent">DAR</span>
+              </h2>
+            </div>
             <p className="text-background/60 text-sm mb-6">
               Professional-grade hardware and fasteners. Serving contractors, manufacturers, and DIY enthusiasts since 1952.
             </p>
@@ -92,7 +96,7 @@ export const Footer = () => {
                 <Mail className="w-4 h-4 text-accent mt-0.5" />
                 <div>
                   <p className="text-background/60">Email</p>
-                  <p className="font-medium">sales@irongrip.com</p>
+                  <p className="font-medium">sales@alamdar.com</p>
                 </div>
               </li>
               <li className="flex items-start gap-3 text-sm">
@@ -109,7 +113,7 @@ export const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-sm text-background/40">
-            © 2024 IronGrip Industrial Hardware. All rights reserved.
+            © 2024 Alamdar Industrial Hardware. All rights reserved.
           </p>
           <div className="flex items-center gap-6 text-sm text-background/40">
             <a href="#" className="hover:text-background transition-colors">Privacy</a>
