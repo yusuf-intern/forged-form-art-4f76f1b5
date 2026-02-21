@@ -2,6 +2,7 @@ import { ReactNode } from "react";
 import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import AdminSidebar from "./AdminSidebar";
 import { Menu } from "lucide-react";
+import alamdarLogo from '@/assets/alamdar-logo.png';
 
 interface AdminLayoutProps {
   children: ReactNode;
@@ -18,8 +19,9 @@ const AdminLayout = ({ children }: AdminLayoutProps) => {
             <SidebarTrigger className="text-background hover:text-accent">
               <Menu className="h-6 w-6" />
             </SidebarTrigger>
+            <img src={alamdarLogo} alt="Alamdar logo" className="h-8 w-auto" />
             <span className="font-bebas text-xl text-background tracking-wider">
-              IRON<span className="text-accent">GRIP</span>
+              ALAM<span className="text-accent">DAR</span>
             </span>
           </div>
           {children}

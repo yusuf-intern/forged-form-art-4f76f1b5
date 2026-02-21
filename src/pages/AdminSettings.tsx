@@ -47,14 +47,14 @@ const AdminSettings = () => {
               <div>
                 <Label className="font-space text-xs text-muted-foreground uppercase tracking-wider">Store Name</Label>
                 <Input 
-                  defaultValue="IronGrip Industrial Supply" 
+                  defaultValue="Alamdar Industrial Supply" 
                   className="bg-background border-muted-foreground/20 font-space mt-1"
                 />
               </div>
               <div>
                 <Label className="font-space text-xs text-muted-foreground uppercase tracking-wider">Contact Email</Label>
                 <Input 
-                  defaultValue="contact@irongrip.com" 
+                  defaultValue="contact@alamdar.com" 
                   className="bg-background border-muted-foreground/20 font-space mt-1"
                 />
               </div>

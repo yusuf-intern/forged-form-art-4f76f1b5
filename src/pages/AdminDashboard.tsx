@@ -131,8 +131,8 @@ const AdminDashboard = () => {
                 <AreaChart data={mockAnalytics.revenue}>
                   <defs>
                     <linearGradient id="revenueGradient" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="5%" stopColor="hsl(25, 85%, 50%)" stopOpacity={0.3}/>
-                      <stop offset="95%" stopColor="hsl(25, 85%, 50%)" stopOpacity={0}/>
+                      <stop offset="5%" stopColor="hsl(50, 95%, 50%)" stopOpacity={0.3}/>
+                      <stop offset="95%" stopColor="hsl(50, 95%, 50%)" stopOpacity={0}/>
                     </linearGradient>
                   </defs>
                   <XAxis 
@@ -155,13 +155,13 @@ const AdminDashboard = () => {
                       fontFamily: 'Space Grotesk',
                     }}
                     labelStyle={{ color: 'hsl(40, 20%, 96%)' }}
-                    itemStyle={{ color: 'hsl(25, 85%, 50%)' }}
+                    itemStyle={{ color: 'hsl(50, 95%, 50%)' }}
                     formatter={(value: number) => [`$${value.toLocaleString()}`, 'Revenue']}
                   />
                   <Area
                     type="monotone"
                     dataKey="amount"
-                    stroke="hsl(25, 85%, 50%)"
+                    stroke="hsl(50, 95%, 50%)"
                     strokeWidth={2}
                     fill="url(#revenueGradient)"
                   />
