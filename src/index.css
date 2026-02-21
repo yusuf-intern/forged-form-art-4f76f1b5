@@ -32,31 +32,31 @@
     --muted: 35 10% 85%;
     --muted-foreground: 30 8% 45%;
 
-    /* Yellow/Red accent */
-    --accent: 50 95% 50%;
-    --accent-foreground: 30 15% 8%;
+    /* Red accent */
+    --accent: 0 80% 50%;
+    --accent-foreground: 0 0% 98%;
 
-    --accent-secondary: 0 80% 50%;
-    --accent-secondary-foreground: 0 0% 98%;
+    --accent-secondary: 45 90% 47%;
+    --accent-secondary-foreground: 30 15% 8%;
 
     --destructive: 0 72% 51%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 35 15% 82%;
     --input: 35 15% 82%;
-    --ring: 50 95% 50%;
+    --ring: 0 80% 50%;
 
     --radius: 0;
 
     /* Sidebar - darker industrial */
     --sidebar-background: 30 10% 12%;
     --sidebar-foreground: 40 15% 90%;
-    --sidebar-primary: 50 95% 50%;
-    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-primary: 0 80% 50%;
+    --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 30 12% 18%;
     --sidebar-accent-foreground: 40 15% 90%;
     --sidebar-border: 30 10% 20%;
-    --sidebar-ring: 50 95% 50%;
+    --sidebar-ring: 0 80% 50%;
 
     /* Custom tokens */
     --glass-bg: 40 20% 96% / 0.8;
@@ -82,27 +82,27 @@
     --muted: 30 10% 22%;
     --muted-foreground: 35 10% 55%;
 
-    --accent: 50 95% 55%;
-    --accent-foreground: 30 15% 8%;
+    --accent: 0 80% 55%;
+    --accent-foreground: 0 0% 98%;
 
-    --accent-secondary: 0 80% 55%;
-    --accent-secondary-foreground: 0 0% 98%;
+    --accent-secondary: 45 90% 50%;
+    --accent-secondary-foreground: 30 15% 8%;
 
     --destructive: 0 62% 45%;
     --destructive-foreground: 0 0% 98%;
 
     --border: 30 10% 22%;
     --input: 30 10% 22%;
-    --ring: 50 95% 55%;
+    --ring: 0 80% 55%;
 
     --sidebar-background: 30 12% 6%;
     --sidebar-foreground: 40 15% 90%;
-    --sidebar-primary: 50 95% 55%;
-    --sidebar-primary-foreground: 30 15% 8%;
+    --sidebar-primary: 0 80% 55%;
+    --sidebar-primary-foreground: 0 0% 98%;
     --sidebar-accent: 30 12% 14%;
     --sidebar-accent-foreground: 40 15% 90%;
     --sidebar-border: 30 10% 16%;
-    --sidebar-ring: 50 95% 55%;
+    --sidebar-ring: 0 80% 55%;
 
     --glass-bg: 30 15% 8% / 0.85;
     --glass-border: 30 10% 22% / 0.5;
