@@ -3,22 +3,29 @@ import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Lock, User, ArrowRight } from "lucide-react";
+import { Lock, User, ArrowRight, Loader2 } from "lucide-react";
 import alamdarLogo from '@/assets/alamdar-logo.png';
+import { useAuth } from "@/hooks/useAuth";
 
 const AdminLogin = () => {
   const navigate = useNavigate();
+  const { login } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Static demo - any credentials work
-    if (email && password) {
+    setError("");
+    setLoading(true);
+    try {
+      await login(email, password);
       navigate("/admin/dashboard");
-    } else {
-      setError("Please enter credentials");
+    } catch (err: any) {
+      setError(err.message ?? "Invalid credentials");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -31,7 +38,7 @@ const AdminLogin = () => {
           <div className="absolute bottom-40 right-10 w-96 h-96 border border-accent/50 rotate-12" />
           <div className="absolute top-1/2 left-1/3 w-32 h-32 bg-accent/20" />
         </div>
-        
+
         <div className="relative z-10 flex flex-col justify-between p-12 w-full">
           <div>
             <div className="flex items-center gap-4">
@@ -44,14 +51,13 @@ const AdminLogin = () => {
               ADMIN CONTROL CENTER
             </p>
           </div>
-          
+
           <div className="space-y-8">
             <div className="border-l-2 border-accent pl-6">
               <p className="text-background/80 font-space text-lg leading-relaxed">
                 "Industrial-grade management for industrial-grade hardware."
               </p>
             </div>
-            
             <div className="grid grid-cols-3 gap-6">
               <div>
                 <p className="font-bebas text-4xl text-accent">2.4K</p>
@@ -67,7 +73,7 @@ const AdminLogin = () => {
               </div>
             </div>
           </div>
-          
+
           <p className="text-background/40 font-space text-xs">
             © 2024 ALAMDAR INDUSTRIAL SUPPLY
           </p>
@@ -77,7 +83,6 @@ const AdminLogin = () => {
       {/* Right Panel - Login Form */}
       <div className="flex-1 flex items-center justify-center p-8 lg:p-16">
         <div className="w-full max-w-md">
-          {/* Mobile Logo */}
           <div className="lg:hidden mb-12">
             <div className="flex items-center gap-3">
               <img src={alamdarLogo} alt="Alamdar logo" className="h-12 w-auto" />
@@ -85,15 +90,11 @@ const AdminLogin = () => {
                 ALAM<span className="text-accent">DAR</span>
               </h1>
             </div>
-            <p className="text-muted-foreground font-space text-sm tracking-wide">
-              ADMIN PORTAL
-            </p>
+            <p className="text-muted-foreground font-space text-sm tracking-wide">ADMIN PORTAL</p>
           </div>
 
           <div className="mb-8">
-            <h2 className="font-bebas text-3xl text-foreground tracking-wide">
-              SECURE ACCESS
-            </h2>
+            <h2 className="font-bebas text-3xl text-foreground tracking-wide">SECURE ACCESS</h2>
             <p className="text-muted-foreground font-space text-sm mt-2">
               Enter your credentials to continue
             </p>
@@ -113,6 +114,7 @@ const AdminLogin = () => {
                   onChange={(e) => setEmail(e.target.value)}
                   placeholder="admin@alamdar.com"
                   className="pl-12 h-12 bg-muted/30 border-muted-foreground/20 focus:border-accent font-space"
+                  required
                 />
               </div>
             </div>
@@ -130,28 +132,28 @@ const AdminLogin = () => {
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="••••••••••"
                   className="pl-12 h-12 bg-muted/30 border-muted-foreground/20 focus:border-accent font-space"
+                  required
                 />
               </div>
             </div>
 
-            {error && (
-              <p className="text-destructive font-space text-sm">{error}</p>
-            )}
+            {error && <p className="text-destructive font-space text-sm">{error}</p>}
 
             <Button
               type="submit"
+              disabled={loading}
               className="w-full h-12 bg-accent hover:bg-accent/90 text-accent-foreground font-bebas text-lg tracking-wider group"
             >
-              ACCESS DASHBOARD
-              <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+              {loading ? (
+                <Loader2 className="h-5 w-5 animate-spin" />
+              ) : (
+                <>
+                  ACCESS DASHBOARD
+                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                </>
+              )}
             </Button>
           </form>
-
-          <div className="mt-8 pt-8 border-t border-muted-foreground/10">
-            <p className="text-muted-foreground font-space text-xs text-center">
-              Demo Mode: Enter any credentials to access
-            </p>
-          </div>
         </div>
       </div>
     </div>
