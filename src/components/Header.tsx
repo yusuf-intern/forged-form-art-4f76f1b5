@@ -1,7 +1,6 @@
 import { useState } from 'react';
-import { Search, ShoppingCart, Menu, X, Phone, Truck } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, Phone, MapPin } from 'lucide-react';
 import alamdarLogo from '@/assets/alamdar-logo.png';
-import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 
 interface HeaderProps {
@@ -14,29 +13,34 @@ export const Header = ({ cartCount = 0, onNavigate }: HeaderProps) => {
   const [searchQuery, setSearchQuery] = useState('');
 
   const navLinks = [
-    { label: 'Catalog', href: 'catalog' },
-    { label: 'Screws', href: 'screws' },
-    { label: 'Fasteners', href: 'fasteners' },
-    { label: 'Bolts & Nuts', href: 'bolts' },
-    { label: 'Anchors', href: 'anchors' },
+    { label: 'Home', href: 'home' },
+    { label: 'Products', href: 'catalog' },
+    { label: 'Contact', href: 'contact' },
   ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       {/* Top Bar */}
       <div className="bg-foreground text-background py-2">
-        <div className="container flex items-center justify-between text-xs tracking-wider uppercase">
+        <div className="container flex items-center justify-between text-xs tracking-wider">
           <div className="flex items-center gap-6">
             <span className="flex items-center gap-2">
               <Phone className="w-3 h-3" />
-              1-800-HARDWARE
+              <a href="tel:+97165354751" className="hover:text-accent transition-colors">+971 6 5354751</a>
             </span>
             <span className="hidden md:flex items-center gap-2">
-              <Truck className="w-3 h-3" />
-              Free shipping over $99
+              <MapPin className="w-3 h-3" />
+              Sharjah • Ajman — U.A.E.
             </span>
           </div>
-          <span className="text-muted-foreground">Est. 1952</span>
+          <a 
+            href="https://www.instagram.com/alamdar_hardware" 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-background/60 hover:text-accent transition-colors"
+          >
+            @alamdar_hardware
+          </a>
         </div>
       </div>
 
@@ -45,10 +49,7 @@ export const Header = ({ cartCount = 0, onNavigate }: HeaderProps) => {
         <div className="container py-4">
           <div className="flex items-center justify-between gap-8">
             {/* Logo */}
-            <div 
-              className="flex-shrink-0 cursor-pointer" 
-              onClick={() => onNavigate?.('home')}
-            >
+            <div className="flex-shrink-0 cursor-pointer" onClick={() => onNavigate?.('home')}>
               <div className="flex items-center gap-3">
                 <img src={alamdarLogo} alt="Alamdar logo" className="h-10 w-auto" />
                 <div>
@@ -56,7 +57,7 @@ export const Header = ({ cartCount = 0, onNavigate }: HeaderProps) => {
                     ALAM<span className="text-accent">DAR</span>
                   </h1>
                   <p className="text-[10px] tracking-[0.3em] text-muted-foreground uppercase -mt-1">
-                    Industrial Hardware
+                    Hardware Trading
                   </p>
                 </div>
               </div>
@@ -67,7 +68,7 @@ export const Header = ({ cartCount = 0, onNavigate }: HeaderProps) => {
               <div className="relative w-full">
                 <Input
                   type="text"
-                  placeholder="Search screws, bolts, fasteners..."
+                  placeholder="Search products..."
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="w-full pl-4 pr-12 py-3 bg-secondary/50 border-border/50 focus:border-accent text-sm"
@@ -91,11 +92,11 @@ export const Header = ({ cartCount = 0, onNavigate }: HeaderProps) => {
 
             {/* Actions */}
             <div className="flex items-center gap-4">
-              <button className="lg:hidden p-2 hover:bg-secondary/50 rounded-sm transition-colors">
+              <button className="lg:hidden p-2 hover:bg-secondary/50 transition-colors">
                 <Search className="w-5 h-5" />
               </button>
               
-              <button className="relative p-2 hover:bg-secondary/50 rounded-sm transition-colors">
+              <button className="relative p-2 hover:bg-secondary/50 transition-colors">
                 <ShoppingCart className="w-5 h-5" />
                 {cartCount > 0 && (
                   <span className="absolute -top-1 -right-1 w-5 h-5 bg-accent text-accent-foreground text-xs font-bold flex items-center justify-center rounded-full">
@@ -105,7 +106,7 @@ export const Header = ({ cartCount = 0, onNavigate }: HeaderProps) => {
               </button>
 
               <button
-                className="lg:hidden p-2 hover:bg-secondary/50 rounded-sm transition-colors"
+                className="lg:hidden p-2 hover:bg-secondary/50 transition-colors"
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
