@@ -1,5 +1,7 @@
 import { ArrowRight, Shield, Truck, Award } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import alamFastenersLogo from '@/assets/alam-fasteners-logo.png';
+import alamTechLogo from '@/assets/alam-tech-logo.png';
 
 interface HeroProps {
   onNavigate?: (section: string) => void;
@@ -17,7 +19,7 @@ export const Hero = ({ onNavigate }: HeroProps) => {
 
       <div className="container relative">
         <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          {/* Left Content - Strong Left Alignment */}
+          {/* Left Content */}
           <div className="lg:col-span-7 space-y-8">
             {/* Eyebrow */}
             <div className="flex items-center gap-4">
@@ -85,14 +87,14 @@ export const Hero = ({ onNavigate }: HeroProps) => {
                   <Award className="w-5 h-5 text-accent" />
                 </div>
                 <div>
-                  <p className="font-semibold text-sm">70+ Years</p>
+                  <p className="font-semibold text-sm">Trusted Brand</p>
                   <p className="text-xs text-muted-foreground">Industry expertise</p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Right Visual - Stats Block */}
+          {/* Right Visual - Stats + Sub-brands */}
           <div className="lg:col-span-5">
             <div className="relative">
               {/* Main Stats Card */}
@@ -124,18 +126,25 @@ export const Hero = ({ onNavigate }: HeroProps) => {
                   </div>
                 </div>
 
-                <div className="pt-4 border-t border-border/30">
-                  <p className="text-sm text-muted-foreground">
-                    Serving contractors, manufacturers, and DIY enthusiasts since 1952.
-                  </p>
+                {/* Sub-brand Logos */}
+                <div className="pt-6 border-t border-border/30">
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider mb-4">Our Brands</p>
+                  <div className="flex items-center gap-6">
+                    <div className="flex-1 bg-secondary/60 p-3 flex items-center justify-center">
+                      <img src={alamFastenersLogo} alt="Alam Fasteners" className="h-10 md:h-12 w-auto object-contain" />
+                    </div>
+                    <div className="flex-1 bg-secondary/60 p-3 flex items-center justify-center">
+                      <img src={alamTechLogo} alt="Alam Tech" className="h-10 md:h-12 w-auto object-contain" />
+                    </div>
+                  </div>
                 </div>
               </div>
 
-              {/* Floating Category Tags */}
+              {/* Floating Tags */}
               <div className="absolute -left-4 top-1/4 glass-card px-4 py-2 text-sm font-medium">
                 Screws & Bolts
               </div>
-              <div className="absolute -right-4 bottom-1/4 glass-card px-4 py-2 text-sm font-medium">
+              <div className="absolute -right-4 bottom-1/3 glass-card px-4 py-2 text-sm font-medium">
                 Anchors
               </div>
             </div>
