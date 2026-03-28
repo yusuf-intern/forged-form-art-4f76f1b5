@@ -35,13 +35,34 @@ async function request<T>(
 
 // ── Auth ─────────────────────────────────────────────────────────────────────
 
+const MOCK_ADMIN = { id: 1, email: "admin@alamdar.com", is_admin: true };
+const MOCK_PASSWORD = "password";
+const MOCK_TOKEN = "mock-jwt-token-alamdar";
+
 export const authApi = {
-  login: (email: string, password: string) =>
-    request<{ access_token: string; token_type: string }>("/auth/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-    }),
-  me: () => request<{ id: number; email: string; is_admin: boolean }>("/auth/me"),
+  login: async (email: string, password: string) => {
+    try {
+      return await request<{ access_token: string; token_type: string }>("/auth/login", {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+      });
+    } catch {
+      // Fallback to mock auth when no backend is running
+      if (email === MOCK_ADMIN.email && password === MOCK_PASSWORD) {
+        return { access_token: MOCK_TOKEN, token_type: "bearer" };
+      }
+      throw new Error("Invalid email or password");
+    }
+  },
+  me: async () => {
+    try {
+      return await request<{ id: number; email: string; is_admin: boolean }>("/auth/me");
+    } catch {
+      const token = localStorage.getItem("alamdar_token");
+      if (token === MOCK_TOKEN) return MOCK_ADMIN;
+      throw new Error("Unauthorized");
+    }
+  },
 };
 
 // ── Products ─────────────────────────────────────────────────────────────────
