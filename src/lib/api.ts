@@ -20,8 +20,6 @@ async function request<T>(
   const res = await fetch(`${API_BASE}${path}`, { ...options, headers });
 
   if (res.status === 401) {
-    localStorage.removeItem("alamdar_token");
-    window.location.href = "/admin";
     throw new Error("Unauthorized");
   }
 
